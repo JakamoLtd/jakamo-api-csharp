@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OrderResponse xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2"
+       xmlns:ccts="urn:oasis:names:specification:ubl:schema:xsd:CoreComponentParameters-2"
+       xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+       xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+       xmlns:udt="urn:un:unece:uncefact:data:draft:UnqualifiedDataTypesSchemaModule:2"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="urn:oasis:names:specification:ubl:schema:xsd:Order-2">
+    <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+    <cbc:CustomizationID>Jakamo</cbc:CustomizationID>
+    <cbc:ID>{{neworder}}</cbc:ID>
+    	
+    	<cac:OrderReference>
+    	    <cbc:ID>163541414141414144141414141414141141414141414</cbc:ID>
+	    </cac:OrderReference>
+	    
+    <cbc:IssueDate>2019-07-28</cbc:IssueDate>
+    <cbc:DocumentCurrencyCode>DKK</cbc:DocumentCurrencyCode>
+    <cbc:CustomerReference>Martin Bernström</cbc:CustomerReference>
+
+    <cac:AdditionalDocumentReference>
+        <cbc:ID>TRUCK FREIGHT</cbc:ID>
+        <cbc:DocumentTypeCode>ZZZ</cbc:DocumentTypeCode>
+    </cac:AdditionalDocumentReference>
+    
+    
+    <cac:BuyerCustomerParty>
+        <cac:Party>
+            <cac:PartyIdentification>
+                <cbc:ID>client company</cbc:ID>
+            </cac:PartyIdentification>
+        </cac:Party>
+    </cac:BuyerCustomerParty>
+    
+    <cac:SellerSupplierParty>
+    	<cac:SellerContact><cbc:ID>James</cbc:ID></cac:SellerContact>
+        <cac:Party>
+            <cac:PartyIdentification>
+                <cbc:ID>owncompany</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+                <cbc:Name>Postman Test SUPPLIER</cbc:Name>
+            </cac:PartyName>
+        </cac:Party>
+    </cac:SellerSupplierParty>
+    
+	<cac:AccountingCustomerParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID/>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Test Company Ab</cbc:Name>
+			</cac:PartyName>
+			
+			<cac:PostalAddress>
+					<cbc:StreetName>Dieter Thoma väg</cbc:StreetName>
+					<cbc:CityName>Kolding</cbc:CityName>
+					<cbc:PostalZone>SE-147 80</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode>SE</cbc:IdentificationCode>
+					<cbc:Name>Sweden</cbc:Name>
+				</cac:Country>
+			</cac:PostalAddress>
+		</cac:Party>
+		<cac:AccountingContact>
+			<cbc:ElectronicMail>invoice@testcompany.example.com</cbc:ElectronicMail>
+		</cac:AccountingContact>
+	</cac:AccountingCustomerParty>
+    
+	<cac:Delivery>
+		<cac:PromisedDeliveryPeriod/>
+		<cac:DeliveryParty>
+			<cac:PartyIdentification>
+				<cbc:ID>3101</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Test company / DISTRIBUTION CENTER</cbc:Name>
+			</cac:PartyName>
+		</cac:DeliveryParty>
+		<cac:DeliveryLocation>
+			<cac:Address>
+				<cbc:Postbox/>
+				<cbc:StreetName>JENS WEISSVLOGS VÄG 16</cbc:StreetName>
+				<cbc:CityName>Kolding</cbc:CityName>
+				<cbc:PostalZone>SE-14741</cbc:PostalZone>
+				<cac:Country>
+					<cbc:Name>Sweden</cbc:Name>
+					<cbc:IdentificationCode>SE</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:Address>
+		</cac:DeliveryLocation>
+	</cac:Delivery>
+
+
+    <cac:DeliveryTerms>
+		<cbc:ID>EXW</cbc:ID>
+		<cac:DeliveryLocation>
+			<cbc:Description>(Incoterms 2010)</cbc:Description>
+		</cac:DeliveryLocation>
+	</cac:DeliveryTerms>
+	
+	<cac:PaymentTerms>
+		<cbc:ID>1</cbc:ID>
+		<cbc:Note>As per group ru</cbc:Note>
+		<cac:SettlementPeriod></cac:SettlementPeriod>
+	</cac:PaymentTerms>
+    
+    <cac:OrderLine>
+                <cbc:Note>4124124124 THERMAL SHIELD</cbc:Note>
+                <cbc:Note>2141553235 GASKET SET</cbc:Note>
+                <cbc:Note>2352355535 DRILL TEMPLATE 28374</cbc:Note>
+                <cbc:Note>2352355532 BOLT 6 MM PEL</cbc:Note>
+                <cbc:Note>2342352335 WASHER 6MM X 1/2" SS</cbc:Note>
+                <cbc:Note>2345235234 TRUSS ROD CLAMP FOR 293849384</cbc:Note>
+                <cbc:Note>7674374734 DIRT CONTAINER</cbc:Note>
+                <cbc:Note>2377762365 SPING ADJUSTMENT TOOL</cbc:Note>
+        <cac:LineItem>
+     
+				
+            <cbc:ID>1</cbc:ID>
+            <cbc:Quantity unitCode="PCS">2.00</cbc:Quantity>
+            <cbc:LineExtensionAmount currencyID="DKK">23576.00</cbc:LineExtensionAmount> -->
+            <cac:Delivery>
+                <cbc:ID>1</cbc:ID>
+                <cbc:Quantity unitCode="PCS">2.00</cbc:Quantity>
+                <cac:PromisedDeliveryPeriod>
+                    <cbc:EndDate>2017-09-14</cbc:EndDate>
+                </cac:PromisedDeliveryPeriod>
+            </cac:Delivery>
+            <cac:Price>
+                <cbc:PriceAmount currencyID="DKK">11788.00</cbc:PriceAmount>
+        
+            </cac:Price>
+            <!-- <cbc:LineStatusCode>Draft</cbc:LineStatusCode> -->
+            <cac:Item>
+            	
+            	<cac:ItemSpecificationDocumentReference>
+    				 <cbc:ID>ASDF1234</cbc:ID>
+    				 <cbc:DocumentTypeCode>NWK</cbc:DocumentTypeCode>
+				</cac:ItemSpecificationDocumentReference>
+            	
+                <cbc:Name>INSTALLATION SET 238402</cbc:Name>
+                <cac:BuyersItemIdentification>
+                    <cbc:ID>938943984</cbc:ID>
+                    <cbc:ExtendedID>ThisIsRevision?</cbc:ExtendedID>
+                </cac:BuyersItemIdentification>
+                <cac:SellersItemIdentification>
+                    <cbc:ID>Thhis?</cbc:ID>
+                </cac:SellersItemIdentification>
+    		
+    		
+            </cac:Item>
+        </cac:LineItem>
+
+        <cac:DocumentReference>
+            <cbc:ID>NOTEZ</cbc:ID>
+            <cbc:DocumentTypeCode>OSF</cbc:DocumentTypeCode>
+        </cac:DocumentReference>
+    </cac:OrderLine>
+    
+    
+    
+        <cac:OrderLine>
+                <cbc:Note>CHEMICAL SET</cbc:Note>
+
+        <cac:LineItem>
+     
+				
+            <cbc:ID>2</cbc:ID>
+            <cbc:Quantity unitCode="PCS">2.00</cbc:Quantity>
+            <cbc:LineExtensionAmount currencyID="DKK">23576.00</cbc:LineExtensionAmount>
+            <cac:Delivery>
+                <cbc:ID>2</cbc:ID>
+                <cbc:Quantity unitCode="PCS">2.00</cbc:Quantity>
+                <cac:PromisedDeliveryPeriod>
+                    <cbc:EndDate>2017-09-14</cbc:EndDate>
+                </cac:PromisedDeliveryPeriod>
+            </cac:Delivery>
+            <cac:Price>
+                <cbc:PriceAmount currencyID="DKK">11788.00</cbc:PriceAmount>
+          <!--      <cbc:BaseQuantity unitCode="PCS">120</cbc:BaseQuantity> -->
+            </cac:Price>
+            
+            <cac:Item>
+            	
+            	<cac:ItemSpecificationDocumentReference>
+    				 <cbc:ID>ASDF1234</cbc:ID>
+    				 <cbc:DocumentTypeCode>NWK</cbc:DocumentTypeCode>
+				</cac:ItemSpecificationDocumentReference>
+            	
+                <cbc:Name>Test thing</cbc:Name>
+                <cac:BuyersItemIdentification>
+                    <cbc:ID>9680168430</cbc:ID>
+                </cac:BuyersItemIdentification>
+                <cac:SellersItemIdentification>
+                    <cbc:ID/>
+                </cac:SellersItemIdentification>
+    		
+    		
+            </cac:Item>
+        </cac:LineItem>
+    </cac:OrderLine>
+
+    <cac:OrderLine>
+    
+        <cac:LineItem>
+     				
+            <cbc:ID>3</cbc:ID>
+            <cbc:Quantity unitCode="KG">100.00</cbc:Quantity>
+           
+            <cac:Delivery>
+                <cbc:ID>1</cbc:ID>
+                <cbc:Quantity>100.00</cbc:Quantity>
+                <cac:PromisedDeliveryPeriod>
+                    <cbc:EndDate>2021-09-14</cbc:EndDate>
+                </cac:PromisedDeliveryPeriod>
+            </cac:Delivery>
+            <cac:Price>
+                <cbc:PriceAmount currencyID="DKK">5.00</cbc:PriceAmount>
+                <!--<cbc:BaseQuantity unitCode="KG">1</cbc:BaseQuantity>-->
+                <!--<cbc:OrderableUnitFactorRate>20</cbc:OrderableUnitFactorRate>-->
+            </cac:Price>
+            <cac:Item>
+            	
+            	<cac:ItemSpecificationDocumentReference>
+                        <cbc:ID>Aluminium</cbc:ID>
+                        <cbc:DocumentTypeCode listID="AttributeList">Material</cbc:DocumentTypeCode>
+                </cac:ItemSpecificationDocumentReference>
+                
+            	
+                <cbc:Name>100x2300 sheet meteal</cbc:Name>
+                <cac:BuyersItemIdentification>
+                    <cbc:ID>938943984</cbc:ID>
+                    <cbc:ExtendedID>ThisIsRevision?</cbc:ExtendedID>
+                </cac:BuyersItemIdentification>
+                <cac:SellersItemIdentification>
+                    <cbc:ID>Thhis?</cbc:ID>
+                </cac:SellersItemIdentification>
+    		
+    		
+            </cac:Item>
+        </cac:LineItem>
+    </cac:OrderLine>
+</OrderResponse>

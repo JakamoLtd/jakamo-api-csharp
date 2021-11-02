@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <PackageVersion>0.0.1</PackageVersion>
+        <Title>Jakamo API SDK</Title>
+        <Authors>Jakamo</Authors>
+        <Description>A SDK containing methods for interacting with the Jakamo Sales- and Purchase Order APIs</Description>
+        <Copyright>2021 Jakamo Osakeyhtiö</Copyright>
+        <Company>Jakamo</Company>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Ardalis.Result" Version="3.1.2" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jakamo.Api", "Jakamo.Api\Jakamo.Api.csproj", "{5B518B64-B51F-45FC-A19B-DDBD32B08B4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApiConsumer", "SampleApiConsumer\SampleApiConsumer.csproj", "{2DB4D5B9-F2D1-4AC4-9672-D92304B5F8E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jakamo.Api.Test", "Jakamo.Api.Test\Jakamo.Api.Test.csproj", "{2C3426B4-AFDF-4947-962B-4C5B5DA0B3F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B518B64-B51F-45FC-A19B-DDBD32B08B4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B518B64-B51F-45FC-A19B-DDBD32B08B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B518B64-B51F-45FC-A19B-DDBD32B08B4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B518B64-B51F-45FC-A19B-DDBD32B08B4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DB4D5B9-F2D1-4AC4-9672-D92304B5F8E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DB4D5B9-F2D1-4AC4-9672-D92304B5F8E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DB4D5B9-F2D1-4AC4-9672-D92304B5F8E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DB4D5B9-F2D1-4AC4-9672-D92304B5F8E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C3426B4-AFDF-4947-962B-4C5B5DA0B3F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C3426B4-AFDF-4947-962B-4C5B5DA0B3F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C3426B4-AFDF-4947-962B-4C5B5DA0B3F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C3426B4-AFDF-4947-962B-4C5B5DA0B3F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
