@@ -41,6 +41,7 @@ public class PurchaseOrderClient : CommonClient, IPurchaseOrderClient
 
     public async Task<Result<bool>> CancelOrder(int orderId, Stream cancellationXml)
     {
+        
         return await UpdateOrder(orderId, cancellationXml);
     }
 
