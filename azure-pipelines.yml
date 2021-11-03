@@ -33,14 +33,14 @@ steps:
   displayName: Test
   inputs:
     command: 'test'
-    projects: '**/*.Tests.csproj'
+    projects: '**/*.Test.csproj'
     arguments: '--configuration Release'
     
 - task: DotNetCoreCLI@2
   displayName: Pack
   inputs:
     command: 'pack'
-    packagesToPack: 'Jakamo.Api/src/*.csproj'
+    packagesToPack: 'Jakamo.Api/src/Jakamo.Api.csproj'
     configuration: 'Release'
     versioningScheme: 'off'
 
