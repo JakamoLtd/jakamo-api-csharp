@@ -12,23 +12,62 @@ pool:
 variables:
   buildConfiguration: 'Release'
 
-steps:
-- task: UseDotNet@2
-  inputs:
-    packageType: 'sdk'
-    version: '6.0.x'
-    includePreviewVersions: true
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'restore'
-    projects: '**/*.csproj'
-    feedsToUse: 'select'
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'build'
-    projects: 'Jakamo.Api/*.csproj'
-    arguments: '--configuration $(buildConfiguration)'
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'test'
-    projects: 'Jakamo.Api.Test/*.csproj'
+stages:
+  - stage: Test
+    displayName: Run tests
+    jobs:
+      - job: Test
+        displayName: Test
+        pool:
+          vmImage: $(vmImageName)
+        steps:
+          - task: UseDotNet@2
+            displayName: "Select .NET 6"
+            inputs:
+              version: '6.x'
+              includePreviewVersions: true
+
+          - task: DotNetCoreCLI@2
+            displayName: "Restore project dependencies"
+            inputs:
+              command: 'restore'
+              projects: '**/*.sln'
+          - task: DotNetCoreCLI@2
+            displayName: 'Build $(buildConfiguration)'
+            inputs:
+              command: 'build'
+              arguments: '--configuration $(buildConfiguration)'
+              projects: '**/*.csproj'
+          - task: DotNetCoreCLI@2
+            displayName: "Run tests"
+            inputs:
+              command: test
+              projects: 'Jakamo.Api.Test/Jakamo.Api.Test.csproj'
+              arguments: '--collect="XPlat Code Coverage"'
+              publishTestResults: true
+          - task: CmdLine@2
+            displayName: "Install report generator"
+            inputs:
+              script: 'dotnet tool install --global dotnet-reportgenerator-globaltool'
+          - task: CmdLine@2
+            inputs:
+              script: 'reportgenerator -reports:$(Agent.TempDirectory)/**/coverage.cobertura.xml -targetdir:$(Build.SourcesDirectory)/coverlet/reports -reporttypes:"Cobertura"'
+          - task: PublishCodeCoverageResults@1
+            displayName: 'Publish code coverage report'
+            inputs:
+              codeCoverageTool: 'Cobertura'
+              summaryFileLocation: '$(Agent.TempDirectory)/**/coverage.cobertura.xml'
+  - stage: Build
+    displayName: Build
+    jobs:
+      - job: Build
+        displayName: Build
+        pool:
+          vmImage: $(vmImageName)
+        steps:
+          - task: DotNetCoreCLI@2
+            displayName: 'Build $(buildConfiguration)'
+            inputs:
+              command: 'build'
+              arguments: '--configuration $(buildConfiguration)'
+              projects: 'Jakamo.Api/*.csproj'
