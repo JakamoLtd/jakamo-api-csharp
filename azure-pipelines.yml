@@ -56,3 +56,12 @@ steps:
     PathtoPublish: '$(System.DefaultWorkingDirectory)/Jakamo.Api/doc/_site'
     ArtifactName: 'docs'
     publishLocation: 'Container'
+- task: NuGetAuthenticate@0
+  inputs:
+    nuGetServiceConnections: 'nuget-publish'
+- task: NuGetCommand@2
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'nuget-publish'
