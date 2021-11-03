@@ -2,13 +2,13 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
-        <PackageVersion>0.0.1.1-dev</PackageVersion>
+        <PackageVersion>0.0.1.2-dev</PackageVersion>
         <Title>Jakamo API</Title>
         <Authors>Jakamo</Authors>
         <Description>An API library containing methods for interacting with the Jakamo Sales- and Purchase Order APIs</Description>
         <Copyright>2021 Jakamo Osakeyhtiö</Copyright>
         <Company>Jakamo</Company>
-        <PackageProjectUrl>https://github.com/JakamoLtd/jakamo-order-sdk-csharp</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/JakamoLtd/jakamo-api-csharp</PackageProjectUrl>
         <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
     </PropertyGroup>
 
