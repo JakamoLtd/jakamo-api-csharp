@@ -45,7 +45,7 @@ steps:
     versioningScheme: 'off'
 
 - powershell: |
-    choco install docfx -y
+    choco install docfx -y --version 2.58.5
     docfx Jakamo.Api/doc/docfx.json
     if ($lastexitcode -ne 0){
       throw ("Error generating document")
