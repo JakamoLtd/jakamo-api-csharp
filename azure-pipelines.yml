@@ -19,7 +19,7 @@ stages:
       - job: Test
         displayName: Test
         pool:
-          vmImage: $(vmImageName)
+          vmImage: ubuntu-latest
         steps:
           - task: UseDotNet@2
             displayName: "Select .NET 6"
@@ -63,7 +63,7 @@ stages:
       - job: Build
         displayName: Build
         pool:
-          vmImage: $(vmImageName)
+          vmImage: ubuntu-latest
         steps:
           - task: DotNetCoreCLI@2
             displayName: 'Build $(buildConfiguration)'
