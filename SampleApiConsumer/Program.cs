@@ -6,8 +6,8 @@ using Serilog.Extensions.Logging;
 
 var httpClient = new HttpClient();
 httpClient.BaseAddress = new Uri("https://demo.thejakamo.com");
-httpClient.DefaultRequestHeaders.Add("Accept", "application/xml");
-httpClient.DefaultRequestHeaders.Add("Authorization", "Basic CHANGEME");
+httpClient.DefaultRequestHeaders.Add("Accept", "application/urmom");
+httpClient.DefaultRequestHeaders.Add("Authorization", "Basic <changeme>");
 
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Debug()
@@ -23,8 +23,17 @@ while(true)
     var result = await client.GetSalesOrderAsync();
 
     // If we have no more results, break out of the loop
-    if (result.Status == ResultStatus.NotFound) break;
-    
+    if (result.Status == ResultStatus.NotFound)
+    {
+        Console.WriteLine("No more messages in queue.");
+        break;
+    }
+    if (result.Status != ResultStatus.Ok)
+    {
+        Console.WriteLine("There was an error: " + string.Join(", ", result.Errors));
+        break;
+    }
+
     var so = result.Value;
     Console.WriteLine($"Order number: {so.OrderNumber}");
     Console.WriteLine($"Confirmation URI: {so.ConfirmationUri}");
@@ -43,13 +52,13 @@ while(true)
 
     Console.WriteLine("Confirming all changes to order...");
     var confirmAllResult = await client.ConfirmAllChangesForSalesOrderAsync(so.ConfirmationUri);
-
+    
     Console.WriteLine(confirmAllResult.Value
         ? $"Successfully confirmed order at {so.ConfirmationUri}"
         : $"Error confirming order: {string.Join("; ", confirmAllResult.Errors)}");
     
     var removeSalesOrderFromQueueAsync = await client.RemoveSalesOrderFromQueueAsync(so.AcknowledgementUri);
-    Console.WriteLine(removeSalesOrderFromQueueAsync.Value == true
+    Console.WriteLine(removeSalesOrderFromQueueAsync.Value
         ? $"Successfully removed {so.OrderNumber} from queue"
         : $"Error removing the order: ${string.Join(" ", removeSalesOrderFromQueueAsync.Errors)}");    
 
@@ -57,11 +66,9 @@ while(true)
     
 }
 
-Console.WriteLine("No more messages in queue.");
-
 Console.WriteLine("Confirming order");
 var fileStream = File.OpenRead("Z:\\Jakamo.Api\\SampleApiConsumer\\OrderResponse_mle.xml");
 var orderResponseResult = await client.SendOrderResponseAsync(fileStream);
-Console.WriteLine(orderResponseResult.Value == true
-    ? $"Successfully posted OrderResponse"
+Console.WriteLine(orderResponseResult.Value
+    ? "Successfully posted OrderResponse"
     : $"Error sending OrderResponse. Server responded with {string.Join(" ", orderResponseResult.Errors)}");

@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Ardalis.Result;
 using Jakamo.Api.Client;
+using Jakamo.Api.DTO;
 using Moq;
 using Moq.Protected;
 using Serilog;
@@ -14,9 +15,9 @@ using Serilog.Extensions.Logging;
 using Xunit;
 using ILogger = Microsoft.Extensions.Logging.ILogger;
 
-namespace Jakamo.Api.Test;
-
-public class SalesOrderClientTest
+namespace Jakamo.Api.Test
+{
+ public class SalesOrderClientTest
 {
 
     private readonly ILogger _logger;
@@ -88,8 +89,8 @@ public class SalesOrderClientTest
         var client = new SalesOrderClient(httpClient, _logger);
         
         var result = await client.GetSalesOrderAsync();
-        Assert.IsType<SalesOrder>(result.Value);
-        var streamContents = await new StreamReader(result.Value.XmlStream!).ReadToEndAsync();
+        Assert.IsType<SalesOrderDto>(result.Value);
+        var streamContents = await new StreamReader(result.Value.XmlStream).ReadToEndAsync();
         Assert.Equal("<Order>lol</Order>", streamContents);
         Assert.False(string.IsNullOrEmpty(result.Value.OrderNumber));
         Assert.False(string.IsNullOrEmpty(result.Value.AcknowledgementUri));
@@ -119,7 +120,7 @@ public class SalesOrderClientTest
         var client = new SalesOrderClient(httpClient, _logger);
         
         var result = await client.GetSalesOrderAsync();
-        Assert.IsNotType<SalesOrder>(result.Value);
+        Assert.IsNotType<SalesOrderDto>(result.Value);
         Assert.True(result.Status == ResultStatus.Error);
         Assert.Equal("Bad Request", string.Join(" ", result.Errors));
     }
@@ -143,7 +144,7 @@ public class SalesOrderClientTest
         var client = new SalesOrderClient(httpClient, _logger);
         
         var result = await client.RemoveSalesOrderFromQueueAsync("https://dummy.local");
-        Assert.IsNotType<SalesOrder>(result.Value);
+        Assert.IsNotType<SalesOrderDto>(result.Value);
         Assert.True(result.Status == ResultStatus.Ok);
     }
     
@@ -166,7 +167,7 @@ public class SalesOrderClientTest
         var client = new SalesOrderClient(httpClient, _logger);
         
         var result = await client.RemoveSalesOrderFromQueueAsync("https://dummy.local");
-        Assert.IsNotType<SalesOrder>(result.Value);
+        Assert.IsNotType<SalesOrderDto>(result.Value);
         Assert.True(result.Status == ResultStatus.Error);
         Assert.Equal("Bad Request", string.Join(" ", result.Errors));
     }
@@ -294,4 +295,5 @@ public class SalesOrderClientTest
         Assert.True(result.Status == ResultStatus.Error);
 
     }
+}   
 }

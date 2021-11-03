@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jakamo.Api", "Jakamo.Api\Jakamo.Api.csproj", "{5B518B64-B51F-45FC-A19B-DDBD32B08B4D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jakamo.Api", "Jakamo.Api\src\Jakamo.Api.csproj", "{5B518B64-B51F-45FC-A19B-DDBD32B08B4D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApiConsumer", "SampleApiConsumer\SampleApiConsumer.csproj", "{2DB4D5B9-F2D1-4AC4-9672-D92304B5F8E2}"
 EndProject

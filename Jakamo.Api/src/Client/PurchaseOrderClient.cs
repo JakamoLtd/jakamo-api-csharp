@@ -1,7 +1,10 @@
+using System.IO;
+using System.Net.Http;
+using System.Threading.Tasks;
 using Ardalis.Result;
 using Jakamo.Api.Interfaces;
 
-namespace Jakamo.Api.Client;
+namespace Jakamo.Api.Client {
 
 public class PurchaseOrderClient : CommonClient, IPurchaseOrderClient
 {
@@ -56,4 +59,6 @@ public class PurchaseOrderClient : CommonClient, IPurchaseOrderClient
     }
     
     
+}
+
 }

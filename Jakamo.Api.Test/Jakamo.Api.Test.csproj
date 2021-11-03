@@ -1,9 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
-        <Nullable>enable</Nullable>
-
+        <TargetFrameworks>net5.0;net6.0;netcoreapp3.1;netcoreapp3.0</TargetFrameworks>
         <IsPackable>false</IsPackable>
     </PropertyGroup>
 
@@ -25,7 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Jakamo.Api\Jakamo.Api.csproj" />
+      <ProjectReference Include="..\Jakamo.Api\src\Jakamo.Api.csproj" />
     </ItemGroup>
 
 </Project>

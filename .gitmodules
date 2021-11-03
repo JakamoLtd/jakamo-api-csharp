@@ -1,0 +1,6 @@
+[submodule "Jakamo.Api/doc/darkfx"]
+	path = Jakamo.Api/doc/darkfx
+	url = https://github.com/steffen-wilke/darkfx.git
+[submodule "Jakamo.Api/doc/material"]
+	path = Jakamo.Api/doc/material
+	url = https://github.com/ovasquez/docfx-material.git

@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Jakamo.Api\Jakamo.Api.csproj" />
+      <ProjectReference Include="..\Jakamo.Api\src\Jakamo.Api.csproj" />
     </ItemGroup>
 
     <ItemGroup>
