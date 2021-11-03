@@ -1,2 +1,2 @@
-# Jakamo API SDK 0.0.1-dev
+# Jakamo API 0.0.1.1-dev
 

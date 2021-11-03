@@ -1,4 +1,4 @@
-# Jakamo API 0.0.1-dev
+# Jakamo API
 
 This is a library that can be used to simplify access to the Jakamo APIs. 
 It is currently under development and has not been battle tested yet.

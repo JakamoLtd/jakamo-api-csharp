@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
-        <PackageVersion>0.0.1</PackageVersion>
+        <PackageVersion>0.0.1.1-dev</PackageVersion>
         <Title>Jakamo API</Title>
         <Authors>Jakamo</Authors>
         <Description>An API library containing methods for interacting with the Jakamo Sales- and Purchase Order APIs</Description>
