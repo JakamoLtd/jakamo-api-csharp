@@ -51,3 +51,8 @@ steps:
       throw ("Error generating document")
     }
   displayName: "Documentation"
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/Jakamo.Api/doc/_site'
+    ArtifactName: 'docs'
+    publishLocation: 'Container'
