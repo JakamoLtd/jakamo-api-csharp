@@ -6,7 +6,7 @@ using Serilog.Extensions.Logging;
 
 var httpClient = new HttpClient();
 httpClient.BaseAddress = new Uri("https://demo.thejakamo.com");
-httpClient.DefaultRequestHeaders.Add("Accept", "application/urmom");
+httpClient.DefaultRequestHeaders.Add("Accept", "application/xml");
 httpClient.DefaultRequestHeaders.Add("Authorization", "Basic <changeme>");
 
 Log.Logger = new LoggerConfiguration()
